@@ -1,0 +1,57 @@
+
+
+header {
+    background-color:cadetblue;
+    width: 90%;
+    padding: 1em;
+    border-radius: 25px;
+
+    margin: 10 auto;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: rgb(4,63,88);
+    background: radial-gradient(circle, rgba(4,63,88,1) 15%, rgba(4,69,95,1) 34%, rgba(4,63,88,1) 51%, rgba(4,64,89,1) 56%, rgba(4,65,90,1) 62%, rgba(4,66,92,1) 66%, rgba(0,212,255,1) 100%);
+    color: white;
+}
+
+
+main {
+    padding: 2rem;
+}
+
+img {
+    width: 100px;
+    /* height: 100px; */
+}
+
+div#grid {
+    margin: 2em auto;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+div#grid .square {
+    width: calc(100% / 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio:1/1;
+}
+
+div#grid,
+div#grid .square {
+    border: 2px white solid;
+}
+
+div#grid .square.clicked {
+    background-color: #7FFFD4;
+}
+
+.red {
+    background-color: red;
+}
