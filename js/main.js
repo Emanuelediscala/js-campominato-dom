@@ -73,10 +73,19 @@ function controlNumber() {
         if (bombs[i] == this.innerHTML) {
         this.style.backgroundColor = "red"
         explosion = true;
+        stopGame()
+        
     }
     }
     if (explosion == false) {
         this.classList.toggle("clicked"); 
+    }
+}
+// DEFINISCO FUNZIONE STOP GAME
+function stopGame() {
+    let tuttiBlocchi = document.querySelectorAll(".square")
+    for (let i= 0; i < tuttiBlocchi.length; i++) {
+        tuttiBlocchi[i].removeEventListener("click", controlNumber)
     }
 }
 
