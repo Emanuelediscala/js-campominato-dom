@@ -68,15 +68,17 @@ function getRndnumber(min, max) {
 // FUNZIONE PER CONTROLLO NUMERO RANDOM 
 
 function controlNumber() {
-    let explosion = false;
+    let explosion = false
     for (let i = 0; i < bombs.length; i++) {
         if (bombs[i] == this.innerHTML) {
-        this.style.backgroundColor = "red"
         explosion = true;
-        stopGame()
     }
+}
+    if (explosion== true) {
+        this.style.backgroundColor = "red"
+        stopGame();
     }
-    if (explosion == false) {
+    else {
         this.classList.add("clicked");
         Point += 1;
     }
