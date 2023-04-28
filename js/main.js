@@ -2,7 +2,7 @@
 const griglia = document.getElementById("grid");
 const PushdButton = document.getElementById("play");
 let bombs = [];
-
+let Point = 0;
 let BlockValue;
 
 
@@ -74,11 +74,11 @@ function controlNumber() {
         this.style.backgroundColor = "red"
         explosion = true;
         stopGame()
-        
     }
     }
     if (explosion == false) {
-        this.classList.toggle("clicked"); 
+        this.classList.add("clicked");
+        Point += 1;
     }
 }
 // DEFINISCO FUNZIONE STOP GAME
@@ -87,5 +87,8 @@ function stopGame() {
     for (let i= 0; i < tuttiBlocchi.length; i++) {
         tuttiBlocchi[i].removeEventListener("click", controlNumber)
     }
+    let p = document.createElement("p");
+    p.innerText = "il tuo punteggio è " + Point;
+    griglia.append(p);
 }
 
