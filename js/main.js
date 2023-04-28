@@ -6,6 +6,7 @@ let Point = 0;
 let BlockValue;
 
 
+
 // DICHIARAZIONE FUNZIONE TASTO BUTTON
 PushdButton.addEventListener("click", function() {
     bombs = [] 
@@ -56,6 +57,10 @@ Nuovoblocco.addEventListener("click", controlNumber);
 }
 }
 
+// FUNZIONE PER SCORRERE BLOCCHI HTML
+
+
+
 // FUNZIONE PER DEFINIRE NUMERO RANDOM
 function getRndnumber(min, max) {
     let existingNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -75,7 +80,7 @@ function controlNumber() {
     }
 }
     if (explosion== true) {
-        this.style.backgroundColor = "red"
+        this.classList.add("red")
         stopGame();
     }
     else {
@@ -89,8 +94,17 @@ function stopGame() {
     for (let i= 0; i < tuttiBlocchi.length; i++) {
         tuttiBlocchi[i].removeEventListener("click", controlNumber)
     }
+    let listBlocchi = document.getElementsByClassName("square");
+    for (let i = 0; i < listBlocchi.length; i++) {
+        const blocco = listBlocchi[i];
+        if (bombs.includes(parseInt(blocco.innerHTML))) {
+            blocco.classList.add("red")
+        }
+        
+    }
     let p = document.createElement("p");
     p.innerText = "il tuo punteggio è " + Point;
+    p.style.textAlign = "center"
     griglia.append(p);
 }
 
